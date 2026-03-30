@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Applications/Tec/4to_semestre/Metodos_computacionales/Ejercicios_programacion/Programacion_Multihilos2/ActividadProgramacion11_A01352823",
+      "program": "/Applications/Tec/4to_semestre/Metodos_computacionales/Ejercicios_programacion/Programacion_Multihilos2/ActividadProgramacion11_A01352823/build/Debug/outDebug"
+    }
+  ]
+}
