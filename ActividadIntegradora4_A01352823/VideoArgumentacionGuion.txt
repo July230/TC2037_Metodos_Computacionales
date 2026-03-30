@@ -1,0 +1,275 @@
+! Argumentación para video de métodos computacionales
+
+Problema 1, Convertir una expresión regular a un AFN, y ese AFD
+
+Una expresión regular es una notación que permite describir patrones válidos en secuencias simbólicas. Un autómata es un modelo matemático funcional para describir un proceso de transformación de una entrada en una salida. 
+
+Trabajamos con expresiones regulares, las cuales cuentan con operandos y operadores básicos: asterisco/cerradura de kleen (*), suma/cerradura positiva (+), alternativa (|), (), concatenación (.). Operandos son símbolos del alfabeto y épsilon (representa una cadena vacía).
+
+Hay dos autómatas, DFA y NFA, y ambos tienen diferencias clave. El NFA tiene transiciones épsilon mientras que el DFA no. NFA puede llegar a un estado a través de varios símbolos mientras que el DFA sólo puede llegar a un estado bajo un símbolo.
+
+El problema uno consistió en tomar una expresión regular, se transformó en una expresión regular  más fácil de leer para el programa, aparecieron los puntos en la expresión. Se utilizó el algoritmo de Thomson, cada operador tiene una transformación a un AFN. 
+
+Originalmente se utilizó Python sin librerías, es decir, código fuente, para la resolución de este problema. Python es un lenguaje de programación de alto nivel, interpretado y de propósito general. Es conocido por su sintaxis simple y clara, lo que facilita su uso para una amplia variedad de aplicaciones, incluyendo el trabajo con autómatas.
+
+Ventajas:
+- Facilidad de uso: Python es conocido por su sintaxis simple y clara.
+- Bibliotecas Especializadas: Existen muchas bibliotecas como AutomataLib y PyEDA para trabajar con autómatas.
+- Comunidad Activa: Amplio soporte comunitario y documentación extensa.
+- Rapidez de Desarrollo: Permite un desarrollo rápido y fácil iteración.
+Desventajas:
+- Rendimiento: Python puede ser más lento que lenguajes compilados como Java.
+- GIL (Global Interpreter Lock): Puede limitar el rendimiento de aplicaciones multihilo en algunos casos.
+- Escalabilidad: Puede no ser adecuado para aplicaciones muy grandes y complejas.
+
+
+
+Hay alternativas que pueden ser más sencillas para resolver el problema:
+
+Java con JFLAP:
+Java es un lenguaje de programación de propósito general, concurrente y orientado a objetos. JFLAP es una herramienta educativa desarrollada en Java para crear y manipular autómatas, gramáticas y otros conceptos de lenguajes formales.
+
+Ventajas:
+- Herramienta Educativa: JFLAP es excelente para la visualización y manipulación de autómatas.
+- Rendimiento: Java ofrece buen rendimiento y es adecuado para aplicaciones a gran escala.
+- Multiplataforma: Funciona en cualquier plataforma con una JVM. (Máquina virtual de Java)
+
+Desventajas:
+- Verbosidad: Java puede ser más verboso y tener una curva de aprendizaje más pronunciada.
+- Configuración: Requiere configuraciones y manejo de entornos de desarrollo más complejos.
+- Herramienta Educativa: JFLAP es más adecuado para propósitos educativos y puede no ser ideal para aplicaciones industriales.
+
+JavaScript:
+JavaScript es un lenguaje de programación interpretado que se utiliza principalmente para el desarrollo web. Es conocido por su facilidad de uso y su integración en navegadores web.
+
+Ventajas:
+
+- Facilidad de Uso: JavaScript es fácil de aprender y tiene una sintaxis sencilla.
+- Integración Web: Ideal para aplicaciones web y fácil de integrar en proyectos front-end.
+- Popularidad: Ampliamente utilizado y soportado por una gran comunidad.
+Desventajas:
+
+- Rendimiento: No es tan rápido como lenguajes compilados para tareas intensivas en cómputo.
+- Limitaciones en Aplicaciones Grandes: Puede no ser ideal para aplicaciones de procesamiento de texto muy grandes o complejas.
+- Herramientas de Desarrollo: Menos herramientas especializadas para autómatas comparado con Python o Java.
+
+Python vs Java: Python es más fácil y rápido de usar para desarrollos pequeños a medianos, mientras que Java, con JFLAP, es más adecuado para el aprendizaje y aplicaciones grandes debido a su rendimiento.
+
+Python vs JavaScript: Python ofrece más herramientas especializadas para autómatas y mejor manejo de tareas intensivas en cómputo, mientras que JavaScript es más adecuado para integraciones web.
+
+Java vs JavaScript: Java ofrece mejor rendimiento y herramientas especializadas para autómatas complejos, mientras que JavaScript es más sencillo de usar y mejor para aplicaciones web.
+
+
+
+
+
+Problema 2, evaluar una cadena utilizando autómatas.
+
+Un autómata finito determinista tiene su definición formal que consiste en una expresión matemática con cinco elementos:
+- Conjunto de estados (debe ser finito y no vacío), K
+- Alfabeto de entrada (conjunto no vacío de símbolos), ∑ sigma mayúscula 
+— Transiciones --> K x ∑ -> K
+— S0 estado inicial
+— F, conjunto de estados finales.
+
+Con cadena, cadena de texto, string, caracteres, etc. Para este problema tuve que integrar un sexto elemento, el conjunto de cadenas a evaluar. Si la cadena es válida, devolver válido, de lo contrario, es falso.
+
+Herramienta Original: Racket (Scheme)
+Descripción:
+Racket es una implementación del lenguaje de programación Scheme, un dialecto de Lisp. Es conocido por su simplicidad y poder en la manipulación de listas y su enfoque en la programación funcional.
+
+Ventajas:
+
+- Sintaxis Simplicidad: Scheme tiene una sintaxis muy simple y minimalista.
+- Potente en Manipulación de Listas: Scheme es excelente para manipular listas y estructuras similares.
+- Educativo: Excelente para aprendizaje y enseñanza de conceptos de computación.
+Desventajas:
+
+- Menor Popularidad: Menor adopción en la industria y menos recursos disponibles.
+- Rendimiento: Puede no ser tan eficiente como lenguajes compilados.
+- Ecosistema: Menor número de bibliotecas y herramientas especializadas comparado con Python o Java.
+
+
+Alternativas:
+Prolog:
+Prolog es un lenguaje de programación lógico asociado con la inteligencia artificial y la lingüística computacional. Es conocido por su capacidad de manejar reglas y hechos a través de un enfoque declarativo.
+
+Ventajas:
+
+- Declarativo: Permite definir reglas y hechos de manera clara y concisa.
+- Backtracking: Maneja automáticamente el retroceso, simplificando la lógica de evaluación de cadenas.
+- Manipulación de Autómatas: Adecuado para definir y manipular autómatas con transiciones y estados de aceptación.
+Desventajas:
+
+- Rendimiento: Puede no ser tan eficiente como lenguajes compilados.
+- Curva de Aprendizaje: La programación lógica puede ser difícil para quienes no están familiarizados con ella.
+- Integración: Integrar Prolog con otros lenguajes o sistemas puede ser más complicado.
+
+
+Haskell con DFA library:
+Descripción:
+Haskell es un lenguaje de programación funcional puro, conocido por su fuerte tipado estático y su énfasis en la inmutabilidad y la programación funcional. La inmutabilidad se refiere al hecho de que las variables no pueden cambiar su valor una vez que se les ha asignado.
+
+Ventajas:
+
+- Paradigma Funcional: Permite una definición clara y concisa de operaciones sobre autómatas.
+- Inmutabilidad: Facilita la razón sobre el comportamiento del autómata debido a la inmutabilidad.
+- Expresividad: Haskell es muy expresivo y permite definir algoritmos complejos de manera concisa.
+Desventajas:
+
+- Curva de Aprendizaje: Haskell tiene una curva de aprendizaje más empinada, especialmente si no estás familiarizado con lenguajes funcionales.
+- Menor Adopción: Menor adopción en la industria comparado con lenguajes como Python o Java.
+- Herramientas: Menos herramientas especializadas para autómatas comparado con otros lenguajes.
+
+
+Alternativa 3: Python con Librerías de Autómatas
+Descripción:
+Python es un lenguaje de programación de alto nivel, interpretado y de propósito general. Existen diversas bibliotecas en Python para trabajar con autómatas, como AutomataLib y PyEDA.
+
+Ventajas:
+
+- Facilidad de Uso: Implementar algoritmos de evaluación de cadenas es más sencillo con la sintaxis de Python.
+- Bibliotecas Especializadas: Existen muchas bibliotecas diseñadas específicamente para este tipo de problemas.
+- Comunidad y Soporte: Gran cantidad de recursos y soporte comunitario.
+Desventajas:
+
+- Rendimiento: Puede no ser tan eficiente como lenguajes compilados.
+- Dependencias: Necesitas instalar y gestionar bibliotecas adicionales.
+- Escalabilidad: Puede no ser adecuado para aplicaciones muy grandes y complejas.
+
+
+Racket vs Prolog: Racket es más sencillo y minimalista, mientras que Prolog ofrece un enfoque declarativo potente para problemas de lógica.
+
+Racket vs Haskell: Haskell ofrece más características funcionales avanzadas y una comunidad de soporte activa, pero tiene una curva de aprendizaje más empinada.
+
+Racket vs Python: Python es más popular y tiene una comunidad más grande y más bibliotecas, pero Racket puede ser más adecuado para ciertos tipos de manipulaciones de listas.
+
+
+
+
+
+
+
+
+Problema 3, paralelizar suma de números primos.
+
+Primero debemos entender dos conceptos: Concurrencia y paralelismo:
+La concurrecia se refiere a la capacidad de distintas partes de un programa, algoritmo o problema de ser ejecutado en desorden o en orden parcial, sin afectar el resultado final. Un programa es concurrente si puede soportar dos o más acciones en un curso al mismo tiempo. La concurrencia consiste en tratar muchas cosas a la vez.
+
+Paralelismo se refiere a la aplicación de múltiples CPU a un problema único, es decir, la ejecución simultánea de varios procesos computacionales. El paralelismo consiste en hacer muchas cosas a la vez. Por ende, es posible tener concurrencia sin paralelismo
+
+La computación paralela consiste en el uso simultáneo de varios procesadores o núcleos que ejecutan una serie de instrucciones que conforman las distintas partes en las que se ha descompuesto un problema computacional. 
+
+Cada hilo puede ejecutar una tarea diferente simultáneamente, compartiendo el mismo espacio de direcciones de memoria del proceso principal. Un hilo (o "thread" en inglés) es la unidad más pequeña y básica de utilización del CPU, que puede ser gestionada de manera independiente por un sistema operativo.
+
+Se trata de una plataforma de computación paralela y un modelo de programación creado por NVIDIA. Está diseñado para permitir a los desarrolladores usar las unidades de procesamiento gráfico (GPU) de NVIDIA para realizar cálculos de propósito general más allá de los gráficos tradicionales.
+
+La actividad integradora consistió en obtener la sumatoria de los números primos dentro de un rango entre 1 y 5000000. Por definición, un número primo es aquel cuya división es entera sólo cuando es dividido entre uno, o entre si mismo.
+
+
+CUDA fue el más rápido, pero resultó ser menos eficiente, el problema si bien era paralelizable, no era lo mejor, incluso el paralelo hecho en c++ resultó ser más eficiente que CUDA. 
+
+
+Herramienta Original: C++ y CUDA
+Descripción:
+CUDA es una plataforma de computación paralela y un modelo de programación desarrollado por NVIDIA para la computación en GPU. C++ es un lenguaje de programación de propósito general que ofrece un control fino sobre la gestión de memoria y el hardware.
+
+Ventajas:
+
+- Rendimiento Máximo: CUDA ofrece un rendimiento excepcional para aplicaciones paralelas en GPU.
+- Control Fino: Permite un control detallado sobre la gestión de memoria y la afinidad de hilos.
+- Ecosistema Rico: Amplia gama de herramientas y bibliotecas de soporte para desarrollo en GPU.
+Desventajas:
+
+- Complejidad: La programación en CUDA puede ser compleja y requiere conocimiento específico.
+- Portabilidad: CUDA es específico para GPUs NVIDIA, lo que limita la portabilidad.
+- Tiempo de Desarrollo: Mayor tiempo de desarrollo debido a la complejidad del código y la gestión de memoria.
+
+
+Alternativa 1: Rust
+Descripción:
+Rust es un lenguaje de programación de sistemas que enfatiza la seguridad y el rendimiento. Está diseñado para ser seguro de memoria y libre de datos. Desarrollado originalmente por Mozilla, Rust se ha convertido en una opción atractiva para desarrollar software que requiere un control preciso sobre el hardware y la gestión de recursos, sin comprometer la seguridad de la memoria.
+
+Ventajas:
+
+- Rendimiento: Rust ofrece un rendimiento excelente comparable a C/C++.
+- Seguridad: Ofrece garantías de seguridad de memoria sin costes de tiempo de ejecución.
+- Comunidad Creciente: Rust tiene una comunidad en crecimiento y buena documentación.
+Desventajas:
+
+- Curva de Aprendizaje: Puede ser desafiante para los nuevos en el lenguaje debido a su sistema de préstamos y propiedad.
+- Menos Bibliotecas: Aunque crece rápidamente, puede tener menos bibliotecas maduras comparado con lenguajes más establecidos.
+- Ecosistema Menor: Todavía tiene menos herramientas especializadas en comparación con CUDA.
+
+Alternativa 2: C++ con std::thread
+Descripción:
+C++ es un lenguaje de programación de propósito general. std::thread es parte de la biblioteca estándar de C++ que proporciona una interfaz para el manejo de hilos.
+
+Ventajas:
+
+- Portabilidad: Parte del estándar C++, lo que garantiza su soporte en todos los compiladores modernos.
+- Control: Permite un control fino sobre la gestión de hilos y recursos.
+- Compatibilidad: Compatible con el código C++ existente y fácil de integrar.
+Desventajas:
+
+- Complejidad: Gestión manual de sincronización y comunicación entre hilos puede ser propensa a errores.
+- Desarrollo más lento: Mayor tiempo de desarrollo debido a la necesidad de gestionar muchos aspectos manualmente.
+- Escalabilidad: Puede ser más difícil de escalar en sistemas de memoria distribuida.
+
+Alternativa 3: Python con CuPy
+Descripción:
+CuPy es una biblioteca de Python que proporciona una API similar a NumPy pero está optimizada para realizar operaciones en GPU utilizando CUDA.
+
+CuPy es una biblioteca de Python diseñada para operaciones numéricas en GPU, proporcionando una API que es compatible con NumPy, la biblioteca de computación numérica de referencia en Python. CuPy facilita el aprovechamiento del poder de cómputo de las GPU para realizar operaciones numéricas intensivas, permitiendo a los desarrolladores escribir código paralelo sin necesidad de conocimientos profundos en CUDA.
+
+Ventajas:
+
+- Facilidad de Uso: Python es fácil de aprender y tiene una sintaxis sencilla.
+- Integración con GPU: CuPy proporciona una API similar a NumPy pero acelerada por GPU.
+- Rápida Prototipación: Permite un desarrollo rápido y fácil iteración.
+— Compatible: La amplia gama de bibliotecas científicas y de datos disponibles en Python se pueden utilizar junto con CuPy, permitiendo la construcción de aplicaciones complejas y poderosas.
+Desventajas:
+
+- Rendimiento: Aunque Python puede ser eficiente con CuPy, generalmente no alcanza el rendimiento de C++ o CUDA.
+- Configuraciones Adicionales: Puede requerir configuraciones adicionales para aprovechar plenamente el paralelismo en GPU.
+- Dependencias: Necesitas gestionar dependencias adicionales.
+
+
+
+C++ y CUDA vs Rust: CUDA ofrece rendimiento superior para computación en GPU, pero Rust ofrece una mayor seguridad de memoria y es más fácil de portar.
+
+C++ y CUDA vs C++ con std::thread: CUDA ofrece un rendimiento mucho mayor para computación paralela en GPU, pero std::thread es más portátil y fácil de integrar con el código C++ existente.
+
+C++ y CUDA vs Python con CuPy: CUDA ofrece rendimiento superior, pero CuPy permite una prototipación más rápida y es más fácil de usar.
+
+
+Python como Herramienta Versátil
+Ventajas:
+
+- Facilidad de Uso: Python es conocido por su sintaxis simple y clara, lo que facilita el desarrollo rápido.
+- Amplia Gama de Bibliotecas: Disponibilidad de bibliotecas especializadas para casi cualquier tarea.
+- Comunidad Activa: Gran cantidad de recursos, documentación y soporte comunitario.
+- Flexibilidad: Adecuado para prototipado rápido y fácil integración con otros sistemas y lenguajes.
+Desventajas:
+
+- Rendimiento: Python puede ser más lento que lenguajes compilados como C++ o Java para tareas intensivas en cómputo.
+- GIL: El Global Interpreter Lock puede limitar el rendimiento en aplicaciones multihilo.
+- Dependencias: La gestión de dependencias adicionales puede ser necesaria para ciertas bibliotecas y herramientas.
+
+Autómatas: Java con JFLAP es mejor por su capacidad educativa y rendimiento.
+
+Evaluar Cadenas: Python con librerías de autómatas es mejor por su facilidad de uso y soporte comunitario.
+
+Paralelizar Suma de Números Primos: C++ y CUDA es mejor por su rendimiento superior y control detallado del hardware.
+
+
+Python se destaca como una herramienta versátil y adecuada para una amplia variedad de aplicaciones debido a su facilidad de uso, extensa colección de bibliotecas y amplia comunidad de soporte. Aunque puede no ser la opción más eficiente para aplicaciones que requieren el máximo rendimiento, su capacidad para permitir un desarrollo rápido y su flexibilidad lo hacen una opción atractiva para muchas tareas, incluyendo el trabajo con autómatas, la evaluación de cadenas y la paralelización de cálculos intensivos. Su capacidad para integrarse con tecnologías de alto rendimiento como CUDA a través de bibliotecas como CuPy también lo convierte en una opción poderosa para tareas que requieren computación paralela intensiva. 
+
+
+
+
+
+
+
+
+
